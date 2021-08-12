@@ -541,12 +541,6 @@ jQuery(document).ready(function(){
 
 		var carousel1			= jQuery('.port_tm_service .owl-carousel');
 
-		var rtlMode	= false;
-
-		if(jQuery('body').hasClass('rtl')){
-			rtlMode = 'true';
-		}
-
 		carousel1.owlCarousel({
 			loop: true,
 			items: 2,
@@ -554,7 +548,6 @@ jQuery(document).ready(function(){
 			margin: 50,
 			autoplay: true,
 			autoplayTimeout: 7000,
-			rtl: rtlMode,
 			dots: true,
 			nav: false,
 			navSpeed: true,
@@ -578,7 +571,6 @@ jQuery(document).ready(function(){
 		margin: 50,
 		autoplay: true,
 		autoplayTimeout: 7000,
-		rtl: rtlMode,
 		dots: true,
 		nav: false,
 		navSpeed: true,

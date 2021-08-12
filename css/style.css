@@ -736,8 +736,8 @@ h1, h2, h3, h4, h5, h6{
 	margin-top: 0px;
 }
 .port_tm_modalbox_about .close{
-	position: fixed;
-	left: 100%;
+	position: relative;
+	left: 97%;
 	top: 0px;
 	margin-left: 40px;
 	z-index: 111111;
@@ -1648,7 +1648,7 @@ h1, h2, h3, h4, h5, h6{
 }
 .port_tm_modalbox_news .close{
 	position: fixed;
-	left: 100%;
+	left: 92%;
 	top: 0px;
 	margin-left: 40px;
 	z-index: 111111;
@@ -1658,8 +1658,8 @@ h1, h2, h3, h4, h5, h6{
 	color: #fff;
 }
 .port_tm_modalbox_news .close .svg{
-	width: 50px;
-	height: 50px;
+	width: 35px;
+	height: 35px;
 }
 .port_tm_modalbox_news .description_wrap{
 	position: relative;
@@ -2641,7 +2641,7 @@ body.dark .port_tm_settings .cursor li .svg,
 	.port_tm_modalbox_news .close .svg{width: 25px;height: 25px;}
 	.port_tm_modalbox_about .box_inner{width: 100%;top: 0px;bottom: 0px;}
 	.port_tm_modalbox_about .close a{color: #000;}
-	.port_tm_modalbox_about .close{left: auto;right: 5px;top: 25px;}
+	.port_tm_modalbox_about .close{position:fixed;left: auto;right: 5px;top: 25px;}
 	.port_tm_modalbox_about .close .svg{width: 25px;height: 25px;}
 }
 
