@@ -124,7 +124,6 @@ jQuery(document).ready(function(){
 				mainImage.css({backgroundImage: 'url('+imgData+')'});
 				title = modalBox.find('.title');
 				title.html(titleHref);
-				port_tm_imgtosvg();
 				return false;
 			});
 		});
@@ -569,7 +568,6 @@ jQuery(document).ready(function(){
 				1920:{items:3}
 			}
 		});
-		port_tm_imgtosvg();
 		
 		var carousel2			= jQuery('.partners .owl-carousel');
 		
@@ -596,39 +594,6 @@ jQuery(document).ready(function(){
 	});
 	}
 	port_tm_partners();
-	
-	// -----------------------------------------------------
-	// ---------------    IMAGE TO SVG    ------------------
-	// -----------------------------------------------------
-
-	function port_tm_imgtosvg(){
-
-		jQuery('img.svg').each(function(){
-
-			var jQueryimg 		= jQuery(this);
-			var imgClass		= jQueryimg.attr('class');
-			var imgURL			= jQueryimg.attr('src');
-
-			jQuery.get(imgURL, function(data) {
-				// Get the SVG tag, ignore the rest
-				var jQuerysvg = jQuery(data).find('svg');
-
-				// Add replaced image's classes to the new SVG
-				if(typeof imgClass !== 'undefined') {
-					jQuerysvg = jQuerysvg.attr('class', imgClass+' replaced-svg');
-				}
-
-				// Remove any invalid XML tags as per http://validator.w3.org
-				jQuerysvg = jQuerysvg.removeAttr('xmlns:a');
-
-				// Replace image with new SVG
-				jQueryimg.replaceWith(jQuerysvg);
-
-			}, 'xml');
-
-		});
-	}
-	port_tm_imgtosvg();
 	
 	// -----------------------------------------------------
 	// --------------------   POPUP    ---------------------
@@ -762,51 +727,6 @@ jQuery(document).ready(function(){
 		}
 	}
 	port_tm_isotope();
-
-	// -----------------------------------------------------
-	// ----------------    CONTACT FORM    -----------------
-	// -----------------------------------------------------
-
-	function port_tm_contact_form(){
-
-		jQuery(".contact_form #send_message").on('click', function(){
-
-			var name 		= jQuery(".contact_form #name").val();
-			var email 		= jQuery(".contact_form #email").val();
-			var message 	= jQuery(".contact_form #message").val();
-			var subject 	= jQuery(".contact_form #subject").val();
-			var success     = jQuery(".contact_form .returnmessage").data('success');
-
-			jQuery(".contact_form .returnmessage").empty(); //To empty previous error/success message.
-			//checking for blank fields	
-			if(name===''||email===''||message===''){
-
-				jQuery('div.empty_notice').slideDown(500).delay(2000).slideUp(500);
-			}
-			else{
-				// Returns successful data submission message when the entered information is stored in database.
-				jQuery.post("modal/contact.php",{ ajax_name: name, ajax_email: email, ajax_message:message, ajax_subject: subject}, function(data) {
-
-					jQuery(".contact_form .returnmessage").append(data);//Append returned message to message paragraph
-
-
-					if(jQuery(".contact_form .returnmessage span.contact_error").length){
-						jQuery(".contact_form .returnmessage").slideDown(500).delay(2000).slideUp(500);		
-					}else{
-						jQuery(".contact_form .returnmessage").append("<span class='contact_success'>"+ success +"</span>");
-						jQuery(".contact_form .returnmessage").slideDown(500).delay(4000).slideUp(500);
-					}
-
-					if(data===""){
-						jQuery("#contact_form")[0].reset();//To reset form fields on success
-					}
-
-				});
-			}
-			return false; 
-		});
-	}
-	port_tm_contact_form();
 	
 	// -------------------------------------------------
 	// -------------  GLITCH  --------------------------

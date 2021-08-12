@@ -406,6 +406,9 @@ h1, h2, h3, h4, h5, h6{
 	font-weight: 500;
 }
 .port_tm_mobile_menu .logo img{max-width: 70px;}
+.port_tm_mobile_menu .logo a {
+	text-decoration: none;
+}
 
 /*---------------------------------------------------*/
 /*	04) PORT_FOLIO HERO
