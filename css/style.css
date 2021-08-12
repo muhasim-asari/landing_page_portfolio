@@ -737,7 +737,7 @@ h1, h2, h3, h4, h5, h6{
 }
 .port_tm_modalbox_about .close{
 	position: relative;
-	left: 97%;
+	left: 96.5%;
 	top: 0px;
 	margin-left: 40px;
 	z-index: 111111;
